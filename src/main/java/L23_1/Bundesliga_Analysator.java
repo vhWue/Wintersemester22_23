@@ -19,7 +19,7 @@ public class Bundesliga_Analysator {
 				.filter(team -> team.punkte>50)
 				.collect(Collectors.toList());
 //		mehrAls50.stream().forEach(team-> System.out.println(team));
-		mehrAls50.stream().forEach(System.out::println);
+		mehrAls50.forEach(System.out::println);
 		
 		/*
 		 * Aufgabe c
@@ -47,39 +47,28 @@ public class Bundesliga_Analysator {
 		System.out.println("\nAufgabe E");
 
 		Mannschaft m = bundesTabelle.stream()
-				.max(new Comparator<Mannschaft>() {
-						@Override
-						public int compare(Mannschaft o1, Mannschaft o2) {
-							if(o1.gegentore<o2.gegentore) return -1;
-							else if(o1.gegentore>o2.gegentore) return 1;
-							else return 0;
-							}
-						})
+				.max((o1, o2) -> Integer.compare(o1.gegentore, o2.gegentore))
 				.get();
 	System.out.println(m);
 	
 	System.out.println("\nComparator durch lamba ausdruck");
 	Comparator<Mannschaft> comp = (Mannschaft m1, Mannschaft m2)->
 	{
-		if(m1.gegentore<m2.gegentore) return -1;
-		else if(m1.gegentore>m2.gegentore) return 1;
-		else return 0;
+		return Integer.compare(m1.gegentore, m2.gegentore);
 	};
 	
 	System.out.println(bundesTabelle.stream().max(comp).get());
 	System.out.println("Reverse");
 	Comparator<Mannschaft> compReverse = (Mannschaft m1, Mannschaft m2)->
 	{
-		if(m1.punkte<m2.punkte) return -1;
-		else if(m1.punkte>m2.punkte) return 1;
-		else return 0;
+		return Integer.compare(m1.punkte, m2.punkte);
 	};
 	
 	
 	
 	bundesTabelle.stream()
 		.sorted(compReverse)
-		.forEach(team -> System.out.println(team));
+		.forEach(System.out::println);
 	
 	}
 	

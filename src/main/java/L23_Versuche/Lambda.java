@@ -61,18 +61,19 @@ public class Lambda {
 		
 		
 		Consumer<String> c = new Consumer<String>() {
-
 			@Override
 			public void accept(String t) {
 				// TODO Auto-generated method stub
 				System.out.println(t+" hallo");
 			}
 		};
+
+		Consumer<String> c2 = (str) -> System.out.println(str+" hallo2");
 		String[] arr = {"Bert","Fritz","Heinz"};
 		
 		
  		Stream<String> s = Arrays.stream(arr);
-// 		s.forEach(c);
+ 		s.forEach(c2);
 		
 	}
 

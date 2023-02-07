@@ -3,7 +3,6 @@ package L21_3;
 public class Tree<E extends Comparable<E>> {
 	Element<E> root;
 	
-	
 	public void einfuegen(Element<E> neu) {
 		if(root==null) root = neu;
 		else einfuegen(root, neu);
