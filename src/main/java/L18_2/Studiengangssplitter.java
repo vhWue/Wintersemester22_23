@@ -1,10 +1,6 @@
 package L18_2;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Studiengangssplitter {
 	
@@ -25,9 +21,9 @@ public class Studiengangssplitter {
 	public static void splitStudiengaenge(String fileName) throws MatrikelnummerException, IOException{
 			
 		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-			BufferedWriter writerWInf = new BufferedWriter(new FileWriter(Studiengaenge.WINF.studiengaenge));
-			BufferedWriter writerInf = new BufferedWriter(new FileWriter(Studiengaenge.INF.studiengaenge));
-			BufferedWriter writerEC = new BufferedWriter(new FileWriter(Studiengaenge.EC.studiengaenge)))
+			 BufferedWriter writerWInf = new BufferedWriter(new FileWriter(Studiengaenge.WINF.studiengaenge));
+			 BufferedWriter writerInf = new BufferedWriter(new FileWriter(Studiengaenge.INF.studiengaenge));
+			 BufferedWriter writerEC = new BufferedWriter(new FileWriter(Studiengaenge.EC.studiengaenge)))
 			{
 				
 				String matrNr;
