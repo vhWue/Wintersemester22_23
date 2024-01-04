@@ -1,4 +1,4 @@
-package Klausur_Lambda;
+package Klausur_KonfigDatei.Klausur_Lambda;
 
 public class Main {
     public static void main(String[] args) {

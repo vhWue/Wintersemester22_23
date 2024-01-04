@@ -59,9 +59,9 @@ public class MultiMap {
 	public String checkCompleteString(String str) throws IllegalTelephoneNumberException  {
 		char[] charArr = str.toCharArray();
 		String rueckgabeString="";
-		
-		for (int i = 0; i < charArr.length; i++) {
-			rueckgabeString+=checkForCharacter(charArr[i]);
+
+		for (char c : charArr) {
+			rueckgabeString += checkForCharacter(c);
 		}
 		if(rueckgabeString.contains("0")) {
 			throw new IllegalTelephoneNumberException("ungueltige Telefonnummer "+rueckgabeString);

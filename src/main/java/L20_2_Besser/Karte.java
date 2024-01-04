@@ -1,7 +1,5 @@
 package L20_2_Besser;
 
-import java.util.Collections;
-
 public class Karte implements Comparable<Karte>{
 	
 	private Farbe farbe;

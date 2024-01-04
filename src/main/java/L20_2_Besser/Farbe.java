@@ -5,7 +5,7 @@ public enum Farbe {
 	PIK(3),
 	HERZ(2),
 	KARO(1);
-	private int wert;
+	private final int wert;
 	
 	 Farbe(int wert) {
 		this.wert=wert;
